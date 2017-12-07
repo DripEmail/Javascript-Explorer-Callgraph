@@ -1,7 +1,7 @@
 function callGraph(graph){
   var svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
+      width = window.innerWidth,
+      height = window.innerHeight;
 
   svg.selectAll("*").remove();  
 
