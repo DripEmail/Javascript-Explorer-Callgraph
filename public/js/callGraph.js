@@ -1,16 +1,14 @@
 function callGraph(graph){
-  var svg = d3.select("svg"),
-      width = window.innerWidth,
-      height = window.innerHeight;
+    var svg = d3.select("svg");
 
   svg.selectAll("*").remove();  
 
   var color = d3.scaleOrdinal(d3.schemeCategory20);
   
   var simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(120).strength(1))
+      .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(200).strength(1.5))
       .force("charge", d3.forceManyBody())
-      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("center", d3.forceCenter(2000, 2000))
  
     var link = svg.append("g")
         .attr("class", "links")
